@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: 'Billajenka',Arial, sans-serif;
+    font-family: 'Billajenka', Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -21,12 +21,17 @@ body {
 header {
     background-color: #ff4757;
     padding: 10px 20px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Ensures the header spans the full width of the viewport */
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px; /* Limit the maximum width of the nav content */
+    margin: 0 auto; /* Center the nav content */
+    width: 100%;
 }
 
 header .logo {
@@ -40,6 +45,13 @@ header ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+header ul li {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 header ul li a {
@@ -121,7 +133,7 @@ header ul li a {
 }
 
 footer {
-    background-color: whitesmoke;
+    background-color: white;
     color: black;
     text-align: center;
     padding: 20px;
@@ -148,18 +160,51 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .gallery-item {
-        width: 50%; /* Adjust width to fit two items per row on smaller screens */
+        width: 33.33%; /* Three items per row on large tablets and small desktops */
+    }
+}
+
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul li {
+        padding: 5px 0;
+    }
+
+    .gallery-item {
+        width: 50%; /* Two items per row on medium tablets */
+    }
+
+    .hero h1 {
+        font-size: 36px; /* Adjust hero text size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 18px; /* Adjust hero text size for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-    header ul {
-        flex-direction: column;
+    .gallery-item {
+        width: 100%; /* One item per row on mobile devices */
     }
 
-    .gallery-item {
-        width: 100%; /* Adjust width to fit one item per row on smallest screens */
+    header nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start;
+    }
+
+    header ul {
+        width: 100%; /* Full width for the nav list */
+    }
+
+    header ul li {
+        width: 100%; /* Full width for the nav list items */
+        text-align: left; /* Align text to the left */
     }
 }
