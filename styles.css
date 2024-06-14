@@ -1,0 +1,163 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'Blanka';
+    src: url('fonts/Blanka-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Billajenka';
+    src: url('fonts/billajenka-mazjj.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Billajenka',Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #ff4757;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Blanka', Arial, sans-serif; /* Apply the custom font */
+    font-size: 24px; /* Adjust the font size as needed */
+    color: white;
+    text-decoration: none;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero {
+    text-align: center;
+    background: url('images/pexels-michael-burrows-7147665.jpg') no-repeat center center/cover;
+    color: black;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.featured {
+    padding: 20px;
+    background-color: white;
+}
+
+.featured h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    width: calc(25% - 15px);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+footer {
+    background-color: #2f3542;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-nav {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-media i {
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    header ul {
+        flex-direction: column;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+}
