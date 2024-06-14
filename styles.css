@@ -21,17 +21,12 @@ body {
 header {
     background-color: #ff4757;
     padding: 10px 20px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw); /* Ensures the header spans the full width of the viewport */
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Limit the maximum width of the nav content */
-    margin: 0 auto; /* Center the nav content */
-    width: 100%;
 }
 
 header .logo {
@@ -45,13 +40,6 @@ header ul {
     list-style: none;
     display: flex;
     gap: 15px;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-header ul li {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
 }
 
 header ul li a {
@@ -65,8 +53,6 @@ header ul li a {
     background: url('images/pexels-michael-burrows-7147665.jpg') no-repeat center center/cover;
     color: black;
     padding: 100px 20px;
-    width: 100vw; /* Full viewport width */
-    margin-left: calc(50% - 50vw); /* Centering the full-width element */
 }
 
 .hero h1 {
@@ -92,15 +78,15 @@ header ul li a {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 0; /* Remove gap between items */
-    justify-content: space-between; /* Ensure items stretch across the full width */
+    gap: 15px;
+    justify-content: center;
 }
 
 .gallery-item {
     position: relative;
-    width: 25%; /* Adjust width to fit four items per row */
+    width: calc(25% - 15px);
     overflow: hidden;
-    border-radius: 0; /* Remove border radius */
+    border-radius: 10px;
 }
 
 .gallery-item img {
@@ -160,51 +146,18 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .gallery-item {
-        width: 33.33%; /* Three items per row on large tablets and small desktops */
-    }
-}
-
 @media (max-width: 768px) {
-    header ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header ul li {
-        padding: 5px 0;
-    }
-
     .gallery-item {
-        width: 50%; /* Two items per row on medium tablets */
-    }
-
-    .hero h1 {
-        font-size: 36px; /* Adjust hero text size for smaller screens */
-    }
-
-    .hero p {
-        font-size: 18px; /* Adjust hero text size for smaller screens */
+        width: calc(50% - 15px);
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-item {
-        width: 100%; /* One item per row on mobile devices */
-    }
-
-    header nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: flex-start;
-    }
-
     header ul {
-        width: 100%; /* Full width for the nav list */
+        flex-direction: column;
     }
 
-    header ul li {
-        width: 100%; /* Full width for the nav list items */
-        text-align: left; /* Align text to the left */
+    .gallery-item {
+        width: 100%;
     }
 }
