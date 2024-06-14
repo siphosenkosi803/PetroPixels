@@ -53,6 +53,8 @@ header ul li a {
     background: url('images/pexels-michael-burrows-7147665.jpg') no-repeat center center/cover;
     color: black;
     padding: 100px 20px;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(50% - 50vw); /* Centering the full-width element */
 }
 
 .hero h1 {
@@ -78,15 +80,15 @@ header ul li a {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    gap: 0; /* Remove gap between items */
+    justify-content: space-between; /* Ensure items stretch across the full width */
 }
 
 .gallery-item {
     position: relative;
-    width: calc(25% - 15px);
+    width: 25%; /* Adjust width to fit four items per row */
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0; /* Remove border radius */
 }
 
 .gallery-item img {
@@ -119,8 +121,8 @@ header ul li a {
 }
 
 footer {
-    background-color: #2f3542;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     text-align: center;
     padding: 20px;
 }
@@ -130,13 +132,13 @@ footer {
 }
 
 .footer-nav a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 10px;
 }
 
 .social-media a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -148,7 +150,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery-item {
-        width: calc(50% - 15px);
+        width: 50%; /* Adjust width to fit two items per row on smaller screens */
     }
 }
 
@@ -158,6 +160,6 @@ footer {
     }
 
     .gallery-item {
-        width: 100%;
+        width: 100%; /* Adjust width to fit one item per row on smallest screens */
     }
 }
