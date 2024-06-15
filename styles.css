@@ -78,15 +78,15 @@ header ul li a {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    margin: -2px; /* To counteract the border on the gallery items */
 }
 
 .gallery-item {
     position: relative;
-    width: calc(25% - 15px);
+    width: calc(25% - 4px); /* Adjusted for the new margin */
     overflow: hidden;
     border-radius: 10px;
+    margin: 2px; /* Added margin to create spacing without gaps */
 }
 
 .gallery-item img {
@@ -148,7 +148,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery-item {
-        width: calc(50% - 15px);
+        width: calc(50% - 4px); /* Adjusted for the new margin */
     }
 }
 
@@ -158,6 +158,6 @@ footer {
     }
 
     .gallery-item {
-        width: 100%;
+        width: calc(100% - 4px); /* Adjusted for the new margin */
     }
 }
